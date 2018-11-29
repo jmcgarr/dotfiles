@@ -79,3 +79,5 @@ do
 done
 
 unset config_files
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
