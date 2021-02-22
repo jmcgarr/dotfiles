@@ -1,6 +1,7 @@
 docker
-jetbrains-toolbox
+minikube
 intellij-idea
+graphiql
 virtualbox
 vagrant
 flux

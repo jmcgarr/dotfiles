@@ -1,5 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 DOTFILES=$HOME/.dotfiles
+#PROFILE_STARTUP=true zsh
+
 
 # oh-mh-zsh theme
 ZSH_THEME="amuse"
@@ -27,7 +29,9 @@ yippee-ki-yay() {
 }
 
 # define oh-my-zsh plugins implicitly based on the topics
-plugins=("${(@f)$(find $DOTFILES -not -name '.git' -d 1 -type d -exec basename {} \;)}")
+# [Mike] commented this out because it was loading the directories as oh-my-zsh plugins.
+#plugins=("${(@f)$(find $DOTFILES -not -name '.git' -d 1 -type d -exec basename {} \;)}")
+plugins=(brew git go iterm2 osx)
 
 plugins+=("${(@f)$(find $DOTFILES/local -not -name '.git' -d 1 -type d -exec basename {} \;)}")
 
@@ -36,6 +40,7 @@ plugins+=("${(@f)$(find -L $DOTFILES -name oh-my-zsh.plugins -d 2 -exec cat {} \
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
 
 # use .localrc for things that need to be kept secret
 if [[ -a ~/.localrc ]]
@@ -65,6 +70,9 @@ export PATH=$DOTFILES/bin:$DOTFILES/local/bin:$PATH
 # Adding a user specific bin directory
 export PATH=/Users/$(whoami)/bin:$PATH
 
+# Adding mysql to PATH
+export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
+
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
@@ -84,3 +92,11 @@ done
 unset config_files
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+eval "$(jenv init -)"
+
+export JAVA_HOME=$(jenv javahome)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
