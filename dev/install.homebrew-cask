@@ -1,12 +1,6 @@
 docker
 jetbrains-toolbox
-adoptopenjdk9
-adoptopenjdk10
-adoptopenjdk11
-adoptopenjdk12
-adoptopenjdk13
-adoptopenjdk14
-adoptopenjdk15
+termurin
 virtualbox
 vagrant
 flux
