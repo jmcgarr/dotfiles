@@ -115,3 +115,6 @@
     markEmptyLines = false
 [merge]
     ff = only
+[user]
+	name = Mike McGarr
+	email = github@sonofgarr.net
