@@ -17,6 +17,7 @@ jenv
 kotlin
 maven
 node
+nodejs
 pkg-config
 postgresql
 pstree

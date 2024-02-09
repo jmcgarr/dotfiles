@@ -117,4 +117,9 @@
     ff = only
 [user]
 	name = Mike McGarr
-	email = github@sonofgarr.net
+	email = 170149+jmcgarr@users.noreply.github.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
