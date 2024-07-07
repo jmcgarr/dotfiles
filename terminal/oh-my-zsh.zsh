@@ -1,6 +1,6 @@
 unsetopt SHARE_HISTORY
 # export ZSH_THEME="powerlevel10k/powerlevel10k"
-export ZSH_THEME="amuse"
+export ZSH_THEME="agnoster"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
